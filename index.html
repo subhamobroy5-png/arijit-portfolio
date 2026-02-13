@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arijit Prosad | Portfolio</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header class="hero">
+    <img src="arijit.jpg" alt="Arijit Prosad">
+    <h1>Arijit Prosad</h1>
+    <p><span class="typing"></span></p>
+    <a href="Arijit_Prosad_CV.pdf" class="btn" download>Download CV</a>
+</header>
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#technical">Technical</a>
+    <a href="#certificates">Certificates</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section id="about" class="fade">
+    <h2>About Me</h2>
+    <div class="card">
+        <p>
+            I am Arijit Prosad, currently studying in 2nd Year Diploma 
+            in Food Processing Technology at Malda Polytechnic.  
+            I aim to build my career as a professional Food Processing 
+            Technologist and continuously upgrade my technical skills.
+        </p>
+    </div>
+</section>
+
+<section id="education" class="fade">
+    <h2>Education</h2>
+
+    <div class="card">
+        <h3>Higher Secondary (2024)</h3>
+        <p>W.B.C.H.S.E | 81.2%</p>
+    </div>
+
+    <div class="card">
+        <h3>Secondary (2022)</h3>
+        <p>W.B.B.S.E | 40.1%</p>
+    </div>
+</section>
+
+<section id="technical" class="fade">
+    <h2>Technical Qualification</h2>
+
+    <div class="card">
+        <h3>Diploma in Food Processing Technology</h3>
+        <p>Malda Polytechnic</p>
+        <p>3rd Semester | GPA: 4.6</p>
+        <p>Expected Completion: 2027</p>
+    </div>
+
+    <div class="card">
+        <h3>Industrial Training</h3>
+        <p>Keventer Agro Limited (Happy Fizz Section)</p>
+        <p>Training Completed: 8 Oct – 25 Oct 2025</p>
+    </div>
+</section>
+
+<section id="certificates" class="fade">
+    <h2>Certificates</h2>
+
+    <div class="card">
+        <h3>Keventer Industrial Training Certificate</h3>
+        <a href="Keventer_Certificate.pdf" class="btn" target="_blank">View Certificate</a>
+    </div>
+
+    <div class="card">
+        <h3>Basic Computer Training Certificate</h3>
+        <a href="Computer_Course_Certificate.pdf" class="btn" target="_blank">View Certificate</a>
+    </div>
+</section>
+
+<section id="contact" class="fade">
+    <h2>Contact</h2>
+
+    <div class="card">
+        <p>Email: <a href="mailto:subhamobroy5@gmail.com">subhamobroy5@gmail.com</a></p>
+        <p>Mobile: 8653153581</p>
+
+        <div class="social">
+            <a href="https://www.instagram.com/arijitprosad?igsh=dzFqZnRmZW9kY25p" target="_blank">Instagram</a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Arijit Prosad | All Rights Reserved</p>
+</footer>
+
+<!-- TYPING ANIMATION SCRIPT -->
+<script>
+const textArray = [
+"Future Food Technologist",
+"Diploma Student - Food Processing Technology",
+"Industrial Training Completed at Keventer",
+"Passionate About Food Innovation"
+];
+
+let typingElement = document.querySelector(".typing");
+let textIndex = 0;
+let charIndex = 0;
+
+function typeEffect() {
+    if (charIndex < textArray[textIndex].length) {
+        typingElement.textContent += textArray[textIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(typeEffect, 80);
+    } else {
+        setTimeout(eraseEffect, 1500);
+    }
+}
+
+function eraseEffect() {
+    if (charIndex > 0) {
+        typingElement.textContent = textArray[textIndex].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(eraseEffect, 40);
+    } else {
+        textIndex++;
+        if (textIndex >= textArray.length) textIndex = 0;
+        setTimeout(typeEffect, 300);
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(typeEffect, 500);
+});
+</script>
+
+<!-- SCROLL FADE ANIMATION -->
+<script>
+const faders = document.querySelectorAll(".fade");
+
+window.addEventListener("scroll", () => {
+    faders.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+            section.classList.add("show");
+        }
+    });
+});
+</script>
+
+</body>
+  </html>
